@@ -1,4 +1,4 @@
-package market.plati.helpers;
+package com.javarush.helpers;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;

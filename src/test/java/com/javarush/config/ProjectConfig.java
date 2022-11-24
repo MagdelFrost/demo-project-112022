@@ -1,4 +1,4 @@
-package market.plati.config;
+package com.javarush.config;
 
 import org.aeonbits.owner.Config;
 

@@ -1,6 +1,6 @@
-package market.plati.helpers;
+package com.javarush.helpers;
 
-import market.plati.config.Project;
+import com.javarush.config.Project;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

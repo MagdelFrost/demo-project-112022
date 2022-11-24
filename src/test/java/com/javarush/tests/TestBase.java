@@ -1,11 +1,12 @@
-package market.plati.tests;
+package com.javarush.tests;
 
-import market.plati.config.Project;
-import market.plati.config.platimarket.App;
-import market.plati.helpers.AllureAttachments;
-import market.plati.helpers.DriverSettings;
-import market.plati.helpers.DriverUtils;
-import market.plati.tests.data.TestData;
+import com.javarush.config.javarush.App;
+import com.javarush.config.Project;
+import com.javarush.helpers.AllureAttachments;
+import com.javarush.helpers.DriverSettings;
+import com.javarush.helpers.DriverUtils;
+import com.javarush.tests.components.MainPage;
+import com.javarush.tests.data.TestData;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -32,6 +33,7 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
+
     @AfterEach
     public void afterEach() {
         String sessionId = DriverUtils.getSessionId();
@@ -47,13 +49,6 @@ public class TestBase {
         }
     }
 
+    MainPage mainPage = new MainPage();
     TestData testData = new TestData();
-
-    String password = testData.getPassword();
-    String firstName = testData.getFirstName();
-    String lastName = testData.getLastName();
-    String email = testData.getEmail();
-    String anotherEmail = testData.getAnotherEmail();
-    String anotherName = testData.getAnotherName();
-    String anotherLastName = testData.getAnotherLastName();
 }

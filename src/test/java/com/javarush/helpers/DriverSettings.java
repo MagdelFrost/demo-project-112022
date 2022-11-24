@@ -1,6 +1,6 @@
-package market.plati.helpers;
+package com.javarush.helpers;
 
-import market.plati.config.Project;
+import com.javarush.config.Project;
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;

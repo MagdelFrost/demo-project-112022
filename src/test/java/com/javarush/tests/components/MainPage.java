@@ -65,7 +65,7 @@ public class MainPage {
         $("[placeholder='Пароль']").setValue(password);
         $("#id_button_jr_welcome_create_account").click();
         $("#id_button_jr_welcome_start_from_scratch").click();
-        sleep(5000);
+        sleep(9000);
         $("#id_button_jr_welcome_get_course").click();
 
         return this;

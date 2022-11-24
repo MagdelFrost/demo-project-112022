@@ -1,10 +1,12 @@
 package com.javarush.tests;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class UITests extends TestBase {
 
     @Test
+    @DisplayName("Тест смены языка страницы")
     void switchLanguageTest() {
         mainPage.openPage()
                 .changeLanguage()
@@ -13,6 +15,7 @@ public class UITests extends TestBase {
 
 
     @Test
+    @DisplayName("Тест страницы Курс")
     void courseTest() {
         mainPage.openPage()
                 .goToCourse()
@@ -20,6 +23,7 @@ public class UITests extends TestBase {
     }
 
     @Test
+    @DisplayName("Тест фильтрации пользователей")
     void searchTest() {
         mainPage.openPage()
                 .goToUsers()
@@ -28,6 +32,7 @@ public class UITests extends TestBase {
     }
 
     @Test
+    @DisplayName("Тест страницы Задачи")
     void firsTaskTest() {
         mainPage.openPage()
                 .goToTasks()
@@ -35,6 +40,7 @@ public class UITests extends TestBase {
     }
 
     @Test
+    @DisplayName("Тест регистрации пользователей через UI")
     void newUserTest() {
         mainPage.openPage()
                 .registrationUser(testData.getEmail(), testData.getPassword())

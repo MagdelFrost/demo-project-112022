@@ -93,6 +93,6 @@ public class MainPage {
 
     @Step("Проверка страницы курса после регистрации")
     public void checkFirstCourse() {
-        $(".article-head__title").shouldHave(text("Обучение программированию на Java | Уроки с нуля"));
+        $(".article-head__info").shouldHave(text("Обучение программированию на Java"));
     }
 }

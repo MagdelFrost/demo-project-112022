@@ -1,4 +1,7 @@
 # Демонстрационный проект: UI тесты <a target="_blank" href="https://javarush.com/">javarush.com</a>.
+<p align="center">
+<img width="50%" title="JavaRush" src="images/logo/JavaRush.jpeg">
+</p>
 
 ## :mag_right: Содержание:
 

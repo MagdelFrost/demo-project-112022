@@ -29,6 +29,7 @@
 <img width="6%" title="Gradle" src="images/logo/Gradle.svg">
 <img width="6%" title="JUnit5" src="images/logo/Junit5.svg">
 <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg">
+<img width="6%" title="Jenkins" src="images/logo/Telegram.svg">
 </p>
 
 ## 	:window: Jenkins сборка

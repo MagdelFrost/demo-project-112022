@@ -21,6 +21,7 @@ public class DriverSettings {
         chromeOptions.addArguments("--disable-popup-blocking");
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--lang=en-en");
+        chromeOptions.addArguments("--start-maximized");
 
         if (Project.isRemoteWebDriver()) {
             capabilities.setCapability("enableVNC", true);

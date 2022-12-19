@@ -1,31 +1,35 @@
 package com.javarush.tests;
 
-import com.javarush.config.javarush.App;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import com.github.javafaker.Faker;
 import com.javarush.config.Project;
 import com.javarush.helpers.AllureAttachments;
 import com.javarush.helpers.DriverSettings;
 import com.javarush.helpers.DriverUtils;
-import com.javarush.tests.components.MainPage;
-import com.javarush.tests.data.TestData;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.junit5.AllureJunit5;
+import com.javarush.pages.*;
 import io.qameta.allure.selenide.AllureSelenide;
-import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.extension.ExtendWith;
 
 
-@ExtendWith({AllureJunit5.class})
 public class TestBase {
+
+    MainPage mainPage = new MainPage();
+    CoursePage coursePage = new CoursePage();
+    RegistrationPage registrationPage = new RegistrationPage();
+    TasksPage tasksPage = new TasksPage();
+    UserPage userPage = new UserPage();
+
+    Faker faker = new Faker();
+
+    String password = faker.numerify("#*#*#*#*#");
+    String email = faker.internet().emailAddress();
+
     @BeforeAll
     static void beforeAll() {
         DriverSettings.configure();
-        RestAssured.baseURI = App.config.apiUrl();
-        Configuration.baseUrl = App.config.webUrl();
     }
 
     @BeforeEach
@@ -48,7 +52,4 @@ public class TestBase {
             AllureAttachments.addVideo(sessionId);
         }
     }
-
-    MainPage mainPage = new MainPage();
-    TestData testData = new TestData();
 }

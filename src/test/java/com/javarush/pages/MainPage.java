@@ -1,7 +1,11 @@
 package com.javarush.pages;
 
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -23,25 +27,22 @@ public class MainPage {
         return this;
     }
 
-    @Step("Переходим на станицу курсов") //TODO: Все в один собрать;
-    public MainPage goToCourse() {
-        $(".sidebar-nav-link.svelte-1myen61").click();
-
+    @Step("Смена цвета темы")
+    public MainPage themeChange() {
+        $(".site-header__theme-switcher.svelte-1teipfl").click();
         return this;
     }
 
-    @Step("Переходим на станицу пользователей")
-    public MainPage goToUsers() {
-        $("[data-site-tour-target='USERS']").click();
-
-        return this;
+    @Step("Проверка цвета темы")
+    public void checkTheme() {
+        $(By.xpath("//div[text()='Темная тема']"))
+                .should(exist);
     }
 
-    @Step("Переходим на станицу задач")
-    public MainPage goToTasks() {
-        $("[data-site-tour-target='TASKS']").click();
+    @Step("Переходим на станицу")
+    public void goTo(String target) {
+        $(String.format("[data-site-tour-target='%s']", target)).click();
 
-        return this;
     }
 
     @Step("Проверка языка страницы")

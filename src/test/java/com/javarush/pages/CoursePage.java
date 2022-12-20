@@ -11,7 +11,9 @@ import static com.codeborne.selenide.Selenide.$$;
 public class CoursePage {
     @Step("Проверка наличия курса")
     public void checkJavaCourse(String courseTitle) {
-        $$(".quest-card__title").filter(Condition.text(courseTitle)).shouldHave(CollectionCondition.size(1));
+        $$(".quest-card__title")
+                .filter(Condition.text(courseTitle))
+                .shouldHave(CollectionCondition.size(1));
     }
 
     @Step("Проверка страницы курса после регистрации")
